@@ -13,7 +13,7 @@ To get started with AIConductor.NET, follow these steps:
 ## Features
 
 - [x] Load third-party DLLs following the `AIConductor.ThirdParty.*.dll` naming convention.
-- [x] - [ ] TBD
+- [ ] TBD
 
 ## Usage
 
@@ -27,4 +27,4 @@ We welcome contributions from the community! If you have ideas for new features,
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License.
