@@ -1,13 +1,8 @@
-﻿using System.Text;
+﻿using AIConductor.Core;
+using AIConductor.Extensions;
+using AIConductor.Interfaces;
+using System.Collections.ObjectModel;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace AIConductor.GUI;
 
@@ -16,8 +11,32 @@ namespace AIConductor.GUI;
 /// </summary>
 public partial class MainWindow : Window
 {
+    public ObservableCollection<IAgent> Agents { get; } = [];
+    public ObservableCollection<ITask> Tasks { get; } = [];
+    public ObservableCollection<ITool> Tools { get; } = [];
+    public ObservableCollection<ITeam> Teams { get; } = [];
+
     public MainWindow()
     {
         InitializeComponent();
+
+        DataContext = this;
+
+        Loaded += MainWindow_Loaded;
+    }
+
+    private async void MainWindow_Loaded(object sender, RoutedEventArgs e)
+    {
+        await InitializeConductor();
+    }
+
+    private async Task InitializeConductor()
+    {
+        await Conductor.Initialize();
+
+        Agents.AddRange(Conductor.Agents);
+        Tasks.AddRange(Conductor.Tasks);
+        Tools.AddRange(Conductor.Tools);
+        Teams.AddRange(Conductor.Teams);
     }
 }

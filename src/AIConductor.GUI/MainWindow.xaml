@@ -5,8 +5,48 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AIConductor.GUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="AI Conductor" Height="450" Width="800"
+        Style="{StaticResource MaterialDesignWindow}"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}">
     <Grid>
-        
+        <TabControl>
+            <TabItem Header="Agents">
+                <ListView x:Name="AgentsListView" ItemsSource="{Binding Agents}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="ID" DisplayMemberBinding="{Binding Id}" />
+                            <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </TabItem>
+            <TabItem Header="Tasks">
+                <ListView x:Name="TasksListView" ItemsSource="{Binding Tasks}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Description" DisplayMemberBinding="{Binding Description}" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </TabItem>
+            <TabItem Header="Tools">
+                <ListView x:Name="ToolsListView" ItemsSource="{Binding Tools}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </TabItem>
+            <TabItem Header="Teams">
+                <ListView x:Name="TeamsListView" ItemsSource="{Binding Teams}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>

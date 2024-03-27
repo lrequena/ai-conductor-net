@@ -1,7 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\AIConductor.Core\AIConductor.Core.csproj" />
+    <ProjectReference Include="..\AIConductor.Extensions\AIConductor.Extensions.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Plugins\readme.md">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
   <PropertyGroup>

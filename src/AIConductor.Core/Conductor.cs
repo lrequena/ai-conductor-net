@@ -10,12 +10,12 @@ namespace AIConductor.Core
         public static List<ITool> Tools { get; private set; } = [];
         public static List<ITeam> Teams { get; private set; } = [];
 
-        public static async Task Init()
+        public static async Task Initialize()
         {
             await LoadPlugins();
         }
 
-        public static Task LoadPlugins()
+        internal static Task LoadPlugins()
         {
             var pluginsLoader = new PluginsLoader();
 
@@ -32,10 +32,13 @@ namespace AIConductor.Core
                     {
                         var assembly = Assembly.LoadFrom(assemblyPath);
 
-                        Agents.AddRange(pluginsLoader.LoadAgents(assembly));
-                        Tasks.AddRange(pluginsLoader.LoadTasks(assembly));
-                        Tools.AddRange(pluginsLoader.LoadTools(assembly));
-                        Teams.AddRange(pluginsLoader.LoadTeams(assembly));
+                        if (IsThirdPartyAssembly(assembly))
+                        {
+                            Agents.AddRange(pluginsLoader.LoadAgents(assembly));
+                            Tasks.AddRange(pluginsLoader.LoadTasks(assembly));
+                            Tools.AddRange(pluginsLoader.LoadTools(assembly));
+                            Teams.AddRange(pluginsLoader.LoadTeams(assembly));
+                        }
                     }
                     catch (Exception)
                     {
@@ -73,6 +76,11 @@ namespace AIConductor.Core
             }
 
             return Task.CompletedTask;
+        }
+
+        private static bool IsThirdPartyAssembly(Assembly assembly)
+        {
+            return assembly.GetName().Name?.StartsWith("AIConductor.ThirdParty.") ?? false;
         }
     }
 }

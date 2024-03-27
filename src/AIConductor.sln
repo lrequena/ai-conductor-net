@@ -27,6 +27,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{79A96C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIConductor.Teams", "AIConductor.Teams\AIConductor.Teams.csproj", "{12D73C15-239A-4A5C-A794-F39BFB2A2992}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIConductor.Extensions", "AIConductor.Extensions\AIConductor.Extensions.csproj", "{A7542A5D-8CE8-4501-BE69-F3CA6919FD41}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,6 +67,10 @@ Global
 		{12D73C15-239A-4A5C-A794-F39BFB2A2992}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12D73C15-239A-4A5C-A794-F39BFB2A2992}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12D73C15-239A-4A5C-A794-F39BFB2A2992}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7542A5D-8CE8-4501-BE69-F3CA6919FD41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7542A5D-8CE8-4501-BE69-F3CA6919FD41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7542A5D-8CE8-4501-BE69-F3CA6919FD41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7542A5D-8CE8-4501-BE69-F3CA6919FD41}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -78,6 +84,7 @@ Global
 		{7380081F-805D-4B6D-8BA0-43F8F0D439D3} = {F592F892-14C7-40AD-98D8-E4663D961043}
 		{6328424E-0A52-466B-9786-97A7C2B43A9F} = {F592F892-14C7-40AD-98D8-E4663D961043}
 		{12D73C15-239A-4A5C-A794-F39BFB2A2992} = {F592F892-14C7-40AD-98D8-E4663D961043}
+		{A7542A5D-8CE8-4501-BE69-F3CA6919FD41} = {6F33CE82-6507-460D-9FB9-0B51F4ABAFE8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F217DD4F-06FB-45C2-8D33-BB0805EE7B7C}

@@ -7,7 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AIConductor.Agents\AIConductor.Agents.csproj" />
     <ProjectReference Include="..\AIConductor.Interfaces\AIConductor.Interfaces.csproj" />
+    <ProjectReference Include="..\AIConductor.Tasks\AIConductor.Tasks.csproj" />
+    <ProjectReference Include="..\AIConductor.Teams\AIConductor.Teams.csproj" />
+    <ProjectReference Include="..\AIConductor.Tools\AIConductor.Tools.csproj" />
   </ItemGroup>
 
 </Project>
