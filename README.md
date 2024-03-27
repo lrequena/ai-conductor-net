@@ -1,5 +1,9 @@
 # AIConductor.NET
 
+**This project is a work in progress and cannot be run yet.**
+
+## Description
+
 AIConductor.NET is a flexible and extensible AI orchestration platform built on .NET technologies. It allows users to assemble AI Teams, each consisting of multiple agents and tasks, and manage their interactions through a user-friendly GUI.
 
 ## Getting Started
